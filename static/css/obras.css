@@ -14,7 +14,7 @@ body{
 /*** Sidebar ***/
 #sidebar{
     /*background: #303641 !important;/*background: linear-gradient(110deg,#272233,#5e4c84) !important;*/
-    background-image: url("../../Tableros_files/purple.jpg") ;  
+    background-image: url("../images/purple.jpg") ;  
     background-size: cover !important;
 }
 .sidebar-header{
