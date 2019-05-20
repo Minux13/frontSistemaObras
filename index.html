@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <link rel="icon" href="static/images/favi.png" type="image/gif" sizes="16x9">
+	    
+        <!--Loading JQuery UI css-->
+	    <link href="./static/css/jquery-ui.css" rel="stylesheet" type="text/css">
+        
+        <!--  -->
+	    <link href="./static/css/main.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap CSS CDN -->
+        <link href="./static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Our Custom CSS -->
+        <link href="./static/css/style4.css" rel="stylesheet" type="text/css">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        
+        <!-- Fonts Google -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
+        <!-- CSS of Sistema de Obras -->
+        <link href="./static/css/obras.css" rel="stylesheet" type="text/css">
+ 
+        <!-- CSS for Lato family font -->
+        <link href="static/css/cssLaton.css" rel="stylesheet">
+
+        <title>Sistema de Obras Públicas del Estado de Nuevo</title>
+    
+    </head>
+    <body class="  pace-done">
+        <div class="pace  pace-inactive">
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">  
+                <div class="pace-progress-inner">
+                </div>
+            </div>
+            <div class="pace-activity">
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+			<nav id="sidebar" style="min-height: 100%;">
+                <div class="sidebar-header">
+                    <div class="sjo-logo-big">
+                	    <img width="244" height="119" class="img-fluid" src="./static/images/logo.png">
+                    </div>
+                    <div class="sjo-logo-small">
+                	    <img width="244" height="119" class="img-fluid" src="./static/images/escudo.png">
+                    </div>
+                </div>
+                <ul class="list-unstyled components">                
+                    <li class="menu-element">
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-cogs fa-fw"></i>
+                            <span class="menu-title">Administración</span>
+                        </a>
+                    </li>
+                    <li class="menu-element">
+                        <a id="portfolio" href="#">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="menu-title">Portafolio</span>
+                        </a>                       
+                    </li>
+                    <li class="menu-element"> 
+                        <a href="#">
+                            <i class="fa fa-sitemap fa-fw"> </i>
+                            <span class="menu-title">Definición de Proyecto</span>
+                        </a>
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-tasks fa-fw"> </i>
+                            <span class="menu-title">Gestión de Proyecto</span>
+                        </a>                          
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-table fa-fw"> </i>
+                            <span class="menu-title">Reportes</span>
+                        </a>                 
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-tachometer-alt fa-fw"> </i>
+                            <span class="menu-title">Tablero</span>
+                        </a>
+                    </li>                   
+                </ul>
+            </nav>
+
+
+
+            <!-- Page Content Holder -->
+            <div id="content" class="container-fluid">
+
+			<!-- Nav Bar -->
+                <nav class="navbar navbar-default navbar-static-top" >
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button class="btn btn-info navbar-btn" id="sidebarCollapse" type="button">
+                                <i class="fa fa-bars"></i>
+                                <span class="sr-only">Toggle navigation</span>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle" style="font-size: 20px; vertical-align: -1px;"></i>
+                                Usuario
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-sw" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Mi Perfil</a>               
+                                <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Mi Calendario</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Mi Buzón</a>     
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i></i>Salir</a>
+                            </div>
+                        </div>                        
+                    </div>
+                </nav>
+
+
+                <!--BEGIN TITLE & BREADCRUMB PAGE-->
+				
+                <div class="page-title-breadcrumb" id="title-breadcrumb-option-demo">
+                    <ol class="breadcrumb page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            &nbsp;
+                            <a href="#">Administración</a>
+                            &nbsp;&nbsp;
+                            <i class="fa fa-angle-right"></i>
+                            &nbsp;&nbsp;
+                        </li>                         
+                    </ol>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                
+                <!--END TITLE & BREADCRUMB PAGE-->
+                
+
+                <!--BEGIN CONTENT-->
+                <div class="container-fluid">
+                	<br>
+                	<div class="row">
+                		<div class="col-lg-12">
+	                 		<div class="portlet box">
+	                            <div class="portlet-header">
+	                                <div class="caption">Estatus de Obras 12 Abril 2019</div>
+	                                <div class="tools">
+                                        <i class="fa fa-chevron-up"></i>
+                                        <i data-toggle="modal" data-target="#modal-config" class="fa fa-cog"></i>
+                                        <i class="fa fa-refresh"></i>
+                                        <i class="fa fa-times"></i>
+                                    </div>
+	                            </div>
+	                            <div class="portlet-body">
+									<div class="row">
+										<div class="col-md-4 col-sm-6">
+											<label for="message-text" class="col-form-label"><b>Dependencia:</b></label>
+											<select id="dependency" class="form-control " required="">
+												<option value="0">--Seleccione una Dependencia--</option>
+												<option value="total">TOTAL</option>
+												<option value="1">INFRAESTRUCTURA</option>
+												<option value="2">ICIFED</option>
+												<option value="3">REA</option>
+												<option value="4">SADM</option>
+												<option value="5">SSNL</option>
+												<option value="6">CODETUR</option>
+												<option value="7">CODEFRONT</option>
+												<option value="8">FIDEPROES</option>
+												<option value="9">DIF</option>
+												<option value="10">FUNDIDORA</option>
+												<option value="11">CONALEP</option>
+												<option value="12">CAMINOS</option>
+												<option value="13">ISSSTELEON</option>
+											</select>
+											<div class="invalid-feedback">Debe seleccionar una dependencia</div>
+										</div>
+							       	</div>
+	                                <div id="genl-pie-chart" style="width: 100%; height:400px">
+                                    </div>
+	                            </div>
+	                        </div>
+                        </div>
+                    </div>                            
+				</div>
+                   
+               	<!-- BEGIN MODAL TABLE -->
+               	<div class="modal" tabindex="-1" style=" height:100vh;    overflow: auto;" role="dialog" id="myModalTable"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				    <div class="modal-dialog" style="max-width:80%!important; overflow:auto; height: 95%;" role="document">
+                    
+				        <div class="modal-content" style="max-height: 93vh; overflow: hidden;border-radius: 4px !important;" >
+				            <div class="modal-header">
+				                <h5 class="modal-title">Estatus de la Obra</h5>
+				                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                    <span aria-hidden="true">×</span>
+				                </button>
+				            </div>
+				            <div class="modal-body" style="overflow: scroll;">
+				      	        <div class="">
+							        <table class="table table-striped table-bordered" style="margin-bottom: 0">
+							            <thead class="thead-dark">
+									        <th scope="col">No.</th>
+									        <th scope="col">Municipio</th>
+									        <th scope="col">Categoría</th>
+									        <th scope="col">Obra</th>
+									        <th scope="col">Empresa</th>
+									        <th scope="col">No. Contrato</th>
+									        <th scope="col">Monto Contratado</th>
+									        <th scope="col">Inicio Según Contrato</th>
+									        <th scope="col">Término Según Contrato</th>
+									        <th scope="col">Fecha Pago Anticipo</th>
+									        <th scope="col">Monto del Anticipo</th>
+                                            <!--
+									        <th scope="col">Terminación Compromiso 2018</th> 
+									        <th scope="col">Fecha Convenio Ampliación</th>
+                                            -->
+									        <th scope="col">Convenio Ampliación Económico</th>
+									        <th scope="col">Monto Contrato Final</th>
+									        <th scope="col">Total Pagado</th>
+									        <th scope="col">Anticipo Pendiente  Amortizar</th>
+									        <th scope="col">Avance Financiero</th>
+									        <th scope="col">Avance Físico Verificado</th>
+									        <th scope="col">Entregada al Beneficiario</th>
+									        <th scope="col">Fecha Verificación</th>
+									        <th scope="col">Estatus Verificado</th>
+									        <th scope="col">Registro Visita</th>
+                                        </thead>
+							            <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               	<!-- END MODAL TABLE -->
+
+
+
+               	<!-- BEGIN SECOND MODAL TABLE -->
+                <div id="modalInfoObra" class="modal fade" data-backdrop-limit="1" tabindex="-1" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 id="modal2Title"></h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            </div>
+                            <div class="modal-body" id="obraDetailModalBody">
+                
+                                <div class="container">
+                                    <div class="row">
+                                        <span class="obraField"></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <span class="titleField"></span><span class="valueField" id="municipioField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="categoriaField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="empresaField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="numero_contratoField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="monto_contratoField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="inicio_obra_segun_contratoField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="termino_obra_segun_contratoField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="fecha_pago_anticipoField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="monto_anticipoField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="convenio_ampliacion_economicoField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="monto_contrato_finalField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="total_pagadoField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="anticipo_pendiente_amortizarField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="avance_financieroField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="avance_fisico_verificado_por_la_contraloriaField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="entregada_al_beneficiarioField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="fecha_de_verificacion_contraloriaField"></span>
+                                            <span class="titleField"></span><span class="valueField" id="estatus_verificado_por_la_contraloriaField"></span>
+                
+                                            <span class="titleField"></span><span class="valueField" id="registro_fotograficoField"></span>
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>               	
+               	<!-- END SECOND MODAL TABLE -->
+                   
+                <div id="footer">
+                        <div class="copyright">
+                            <a href="#">Gobierno del Estado de Nuevo León</a>
+                        </div>
+                </div>
+                
+                <div class="lds-roller"  id="waintingAnimation" >
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                </div>
+
+                <!-- For wainting animation of ellipsis, uncomment CSS -->
+                <!--
+                <div class="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                -->
+
+            </div>
+        </div>
+
+
+        <!-- Jquery -->
+        <script src="./static/js/jquery-3.3.1.min.js"></script>
+        <!-- Bootstrap -->
+		<script src="./static/js/bootstrap.min.js"></script>
+        <!-- Jquery UI -->
+	    <script src="./static/js/jquery-ui.js"></script>
+        <!--  -->
+        <script src="./static/js/jsonpath-0.8.0.js"></script>
+        <!-- Highcharts -->
+        <script src="./static/js/highcharts.js"></script>
+        <!-- Highcharts 3D charts -->
+        <script src="./static/js/highcharts-3d.js"></script>
+        <!-- Module of Highcharts -->
+        <script src="./static/js/exporting.js"></script>
+        
+        <!-- Custom JS for Sistema de Obras -->
+        <script src="./static/js/obras.js"></script>
+	    
+    </body>
+</html>
