@@ -2,28 +2,76 @@ function setTD(el, className) {
     return '<td class="'+ className +'">'+el+'</td>';
 }
 
+
+function setLegendsChart(data){
+    
+    var widthWindow = jQuery(window).width()
+
+    var legendCh = '<div id="containerLegends">';
+    for(var i in data){
+        if(data[i].y == 0 || data[i].y == null ){
+            ;
+        }else{
+            console.log(data[i].y);
+            var shape = '<svg xmlns="http://www.w3.org/2000/svg"> <circle fill="'+ data[i].color +'" /> </svg>'
+            var spanY = '<span>'+ data[i].y +'</span>  '
+            var spanName = '<span>'+ data[i].name +'</span>  '
+            legendCh += '<p class="legendRebanada"> '+ shape + spanY + spanName +'</p>';
+        }
+    }
+    legendCh += '</div>';
+
+    if(widthWindow < 600){
+        var chartDataLabel = false;                
+        document.getElementById('genl-legend-pie-chart').innerHTML = legendCh;
+    }else{
+        var chartDataLabel = true;
+        document.getElementById('genl-legend-pie-chart').innerHTML = '';
+    }
+
+    return chartDataLabel;
+}
+
+
 function loadDataPieChart(dependency) {
     $.getJSON('./static/mock/plots.json', function(data) {
-        try {
+        //try {
    	        //var data = camposGPie[id-1].plots;
             var plots;
             var strJSon = "[{}]";        
             plots = jsonPath(data, "$.[?(@.id=='"+dependency+"')].plots[*]");
             strJSon = JSON.stringify(plots);
             var data = JSON.parse(strJSon);
-            
+
             var numTotales = 0; //Sum of all obras for titulo
             for(var dd in data){
                 numTotales += parseInt(data[dd].y);
             }
-   	    	var options = {
+            
+            var chartDataLabel = setLegendsChart(data)
+            var chartShowInLegend = false;  //Deprecable
+                        
+            for (var y in data ){
+                if(data[y].y == 0){
+                    data[y].y = null
+                }
+            }
+   	    	
+            var options = {
    	    	    chart: {
    	    		    type: 'pie',
                     options3d: {
                         enabled: true,
                         alpha: 45,
                         beta: 0
-                    }
+                    },
+                    /*events: {
+                        render: function () {
+                            var enableDataLabel = setLegendsChart(data);
+                            console.log(this);
+                            this.series[0].plotOptions.dataLabels.enabled = enableDataLabel
+                        }
+                    } */   
    	    		},
    	    		title: {
    	    	        text: 'TOTAL DE OBRAS ' + numTotales
@@ -36,6 +84,7 @@ function loadDataPieChart(dependency) {
    	    			    allowPointSelect: true,
    	    			    cursor: 'pointer',
                         depth: 35,
+                        showInLegend: chartShowInLegend,
    	    	            point: {
    	    	                events: {
    	    	                    click: function () {
@@ -44,25 +93,47 @@ function loadDataPieChart(dependency) {
    	    	                }
    	    	            },									    
    	    			    dataLabels: {
-   	    			        enabled: true,
+   	    			        enabled: chartDataLabel,
    	    			        color: '#000000',
    	    			        connectorColor: '#000000',
    	    			        format: '<b>{point.name}</b>: {point.y:.0f}'
    	    	            }
    	    		    }
    	            },
-   	    			
+                /*legend: {
+                    useHTML: true,
+                    labelFormatter: function () {
+                        console.log(this);
+                        var a = this.percentage
+                        var nameO = '<span style="margin-right:5px;">' + this.name + '</span>    </tspan>'
+                        var yValue = this.y === null ? 0 : this.y;
+                        var pYO = '<span style="margin-right:5px;">' + yValue + '</span>  </tspan>'
+                        var percentO = '<span>' + this.percentage.toFixed(2) + '%</span>  '
+
+                        if( yValue === 0 ){
+                            this.options.color = "#777"
+                            console.log("dddd");
+                            return null;
+                        }
+                        
+                        var re = this.y === null ? null : pYO + nameO +  percentO ;
+                        return re;
+                    }
+                },*/
+                credits: {
+                    enabled: false
+                },		
    	    		series: [{
    	    		    data: []
    	    		}]
    	    	};
 
-   	    	var chart = Highcharts.chart('genl-pie-chart', options);
+   	    	chart = Highcharts.chart('genl-pie-chart', options);
    	    	chart.series[0].setData(data);
    	    
-        }catch(err){
+        /*}catch(err){
    	    	console.log("Error: "+err);
-   	    }
+   	    }*/
                       
     });
 }
@@ -82,8 +153,9 @@ function loadModalTable(idStatus, name, value) {
         var rows;
         var strRows=""; 
     
-        if(dependency == 'total'){
-            rows = jsonPath(data, "$.[?(@.dependency=='"+dependency+"' )]");
+        if(dependency == '14'){
+
+            rows = jsonPath(data, "$.[?( @.id_estado_obra=='"+idStatus+"')]");
         }else{
             rows = jsonPath(data, "$.[?(@.dependency=='"+dependency+"' && @.id_estado_obra=='"+idStatus+"')]");
         }
