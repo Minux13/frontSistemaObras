@@ -1,0 +1,562 @@
+[
+   {
+      "id":0,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":50,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":16,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":19,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":1,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":4,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":11,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":1,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":254,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":8,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":57,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":5,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":2,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":36,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":3,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":20,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":2,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":3,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":18,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":27,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":4,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":33,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":1,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":0,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":5,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":5,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":3,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":6,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":4,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":1,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":7,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":4,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":1,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":0,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":1,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":8,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":4,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":0,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":9,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":2,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":1,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":10,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":1,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":1,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":11,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":2,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":0,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":0,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":12,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":0,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":1,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":0,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":0,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":0,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":0,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":0,
+            "color":"#79ccec"
+         }
+      ]
+   },
+   {
+      "id":13,
+      "plots":[
+         {
+            "name":"TERMINADAS",
+            "y":413,
+            "color":"#EEEE00"
+         },
+         {
+            "name":"EN TIEMPO",
+            "y":30,
+            "color":"#009900"
+         },
+         {
+            "name":"CON RETRASO",
+            "y":129,
+            "color":"#C70000"
+         },
+         {
+            "name":"RESCINDIDAS",
+            "y":6,
+            "color":"#999999"
+         },
+         {
+            "name":"OBRAS  NO INICIADAS",
+            "y":2,
+            "color":"#663399"
+         },
+         {
+            "name":"AVANCE FINANCIERO MAYO AL FÍSICO",
+            "y":4,
+            "color":"#EE6600"
+         },
+         {
+            "name":"OBRAS DE FUERZA CIVIL POLICÍA Y PENALES",
+            "y":12,
+            "color":"#79ccec"
+         }
+      ]
+   }
+]
