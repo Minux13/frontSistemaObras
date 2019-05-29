@@ -34,6 +34,9 @@
         <!-- CSS for Lato family font -->
         <link href="static/css/cssLaton.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
         <title>Sistema de Obras Públicas del Estado de Nuevo</title>
     
     </head>
@@ -95,6 +98,7 @@
                             <span class="menu-title">Tablero</span>
                         </a>
                     </li>                   
+                    
                 </ul>
             </nav>
 
@@ -119,8 +123,10 @@
                             </button>
                             <div class="dropdown-menu dropdown-menu-sw" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Mi Perfil</a>               
-                                <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Mi Calendario</a>
-                                <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Mi Buzón</a>     
+                                <!--
+                                <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Calendario</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Buzón</a>     
+                                -->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i></i>Salir</a>
                             </div>
@@ -156,12 +162,14 @@
                         <div class="col-lg-12">
                              <div class="portlet box">
                                 <div class="portlet-header">
-                                    <div class="caption">Estatus de Obras 12 Abril 2019</div>
+                                    <div class="caption">Estatus de Obras 15 Mayo 2019</div>
                                     <div class="tools">
+                                        <!--
                                         <i class="fa fa-chevron-up"></i>
                                         <i data-toggle="modal" data-target="#modal-config" class="fa fa-cog"></i>
                                         <i class="fa fa-refresh"></i>
                                         <i class="fa fa-times"></i>
+                                        -->
                                     </div>
                                 </div>
                                 <div class="portlet-body">
@@ -189,6 +197,8 @@
                                         </div>
                                        </div>
                                     <div id="genl-pie-chart" style="width: 100%; height:400px">
+                                    </div>
+                                    <div id="genl-legend-pie-chart" style="color: #444">
                                     </div>
                                 </div>
                             </div>
