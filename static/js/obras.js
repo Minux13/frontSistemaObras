@@ -242,107 +242,6 @@ function loadModalTable(idStatus, name, value) {
 }
 
 
-function setRowFieldModal2( fieldValue, idName, titleName ){
-    
-    var strRow = `
-    <div class="row">
-        <div class="col-sm-6">
-            <span class="titleField">` + titleName + `:</span>
-        </div>
-        <div class="col-sm-6">
-            <span class="valueField" id="`+ idName +`">`+ fieldValue +`</span>
-        </div>
-    </div>
-    `;
-    return strRow;
-}
-
-function modalTemplateObraDetail(tds){
-    document.getElementById('modal2Title').innerHTML = $(tds)[0].getElementsByClassName('obra')[0].innerHTML;
-
-    var regFotografico = '';
-    var bootstrapClassRegFoto = '';
-    var bootstrapClassFields = 'col-md-12 order-md-1';
-    
-    if( $(tds)[0].getElementsByClassName('registro_fotografico')[0].innerHTML ){
-        regFotografico = $(tds)[0].getElementsByClassName('registro_fotografico')[0].innerHTML;
-        bootstrapClassRegFoto = 'col-md-4 order-md-2';
-        bootstrapClassFields = 'col-md-8 order-md-1';
-    }
-
-    var string = `
-    <div class="container">
-        <div class="row">
-            <div class="` + bootstrapClassRegFoto + `" id="colImageModalObraDeail">
-                <div class="" class="registro_fotograficoField">`+ regFotografico +`</div>
-            </div>
-            <div class="` + bootstrapClassFields + `">
-                ` 
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('country')[0].innerHTML, 'municipioField', 'Municipio' )
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('categoria')[0].innerHTML, 'categoriaField', 'Categoría')
-
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('empresa')[0].innerHTML, 'empresaField', 'Empresa')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('numero_contrato')[0].innerHTML, 'numero_contratoField', 'Número de contrato')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('monto_contrato')[0].innerHTML, 'monto_contratoField', 'Monto de contrato')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('inicio_obra_segun_contrato')[0].innerHTML, 'inicio_obra_segun_contratoField', 'Inicio de obra según contrato')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('termino_obra_segun_contrato')[0].innerHTML, 'termino_obra_segun_contratoField', 'Termino de obra según contrato')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('fecha_pago_anticipo')[0].innerHTML, 'fecha_pago_anticipoField', 'Fecha de pago anticipo')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('monto_anticipo')[0].innerHTML, 'monto_anticipoField',  'Monto anticipo')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('convenio_ampliacion_economico')[0].innerHTML, 'convenio_ampliacion_economicoField',  'Convenio de apliación económico')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('monto_contrato_final')[0].innerHTML, 'monto_contrato_finalField', 'Monto contrato final')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('total_pagado')[0].innerHTML, 'total_pagadoField',  'Total pagado')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('anticipo_pendiente_amortizar')[0].innerHTML, 'anticipo_pendiente_amortizarField',  'Anticipo pendiente amotizar')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('avance_financiero')[0].innerHTML, 'avance_financieroField', 'Avance financiero')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('avance_fisico_verificado_por_la_contraloria')[0].innerHTML, 'avance_fisico_verificado_por_la_contraloriaField', 'Avance físico verificado por la contraloría')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('entregada_al_beneficiario')[0].innerHTML, 'entregada_al_beneficiarioField', 'Entregada al beneficiario')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('fecha_de_verificacion_contraloria')[0].innerHTML, 'fecha_de_verificacion_contraloriaField', 'Fecha de verificación contraloría')
-                + setRowFieldModal2( $(tds)[0].getElementsByClassName('estatus_verificado_por_la_contraloria')[0].innerHTML, 'estatus_verificado_por_la_contraloriaField', 'Estatus verificado por la contraloría')
-                
-                +`
-            </div>
-        </div>
-        <div class="row">
-            <div id="map"></div>
-        </div>
-    </div>
-    
-    
-    `;
-
-   
-
-
-    return string;
-}
-
-
-
-/* Second modal */
-function showModalInfoObra(tdElement){
-    $('#modalInfoObra').modal({ show: true });
-    stringContainer = modalTemplateObraDetail(tdElement) 
-    $('#modalInfoObra .modal-body')[0].innerHTML = stringContainer;
-
-    var map = L.map('map').setView([25.6761633,-100.2952764], 13);
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    
-    L.marker([25.6761633,-100.2952764]).addTo(map)
-       // .bindPopup('')
-       // .openPopup();
-    
-    setTimeout(function(){map._onResize()}, 1000);
-}
-$('#modalInfoObra').on('show', function() {
-  	$('#myModalTable').css('opacity', .5);
-  	$('#myModalTable').unbind();
-    $('#myModalTable').find('[data-dismiss]').unbind();
-});
-$('#modalInfoObra').on('hidden', function() {
-  	$('#myModalTable').css('opacity', 1);
-});
 
 
 $(document).ready(function () {
@@ -369,7 +268,7 @@ function tabl(){
     g.setAttribute("id", "obra-container-body");
 
     
-//#obra-container-body
+    //#obra-container-body
     $(g).append(t)
     c.replaceWith(g)
     console.log(g);
