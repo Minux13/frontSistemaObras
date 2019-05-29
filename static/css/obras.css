@@ -2,11 +2,14 @@ body{
     font-family: 'Open Sans', sans-serif !important;
 }
 #content{
-    background: #f0f0ff;
+    background: #fafafa;
 }
 .portlet, .page-title-breadcrumb{
     border: none;
     border-bottom: none !important;
+}
+.portlet-header{
+    padding: 18px 25px !important;
 }
 
 
@@ -141,51 +144,7 @@ body{
 
 
 
-/* Scroll bar of modal table*/
-/* width */
-.modal-body::-webkit-scrollbar {
-  width:  10px;
-  height: 10px;
-}
-/* Track */
-.modal-body::-webkit-scrollbar-track {
-  /*box-shadow: inset 0 0 5px grey; 
-  border-radius: 15px;]*/
-  background: rgba(100,100,100,0.1)
-}
-/* Handle */
-.modal-body::-webkit-scrollbar-thumb {
-  background: #ccc; 
-  border-radius: 15px;
-}
-/* Handle on hover */
-.modal-body::-webkit-scrollbar-thumb:hover {
-  /*background: #b30000; */
- 
-}
 
-
-
-
-/* Modal Table */
-.table th{
-    border: 0px;
-}
-
-.modal-body{
-    padding: 0px;
-}
-th { position: sticky; top: 0; }
-/*#myModalTable .registro_fotografico img{
-    width: 10em;
-    height: auto;
-}*/
-#myModalTable .registro_fotografico {
-    display: inline-flex;
-}
-#myModalTable .registro_fotografico img {
-    margin: 0 5px;
-}
 
 
 
@@ -205,45 +164,18 @@ th { position: sticky; top: 0; }
 }
 
 #modalInfoObra .modal-dialog{
-    max-width: none !important;
-    width: 80%;
+    /*max-width: none !important;
+    width: 80%;*/
 }
 #modalInfoObra .modal-content{
     border-radius: 8px !important;
     box-shadow: 0 15px 15px #444;
 }
-
-.titleField{
-    font-size: 1.6em;
-    color: #333;
-}
-.valueField{
-    font-size: 1.6em;
-    color: #333;
-    margin-left: 10px;
-}
 #obraDetailModalBody {
     padding: 26px;
 }
-#modal2Title{
-    padding: 15px 30px;
-}
 
-#obraDetailModalBody img{
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
 
-#colImageModalObraDeail, .registro_fotograficoField, #registro_fotograficoField img {
-    padding: 0px; 
-    margin: 0px;
-}
-
-#mapaObraDetailField{
-    margin-top: 45px;
-}
 
 
 
@@ -256,8 +188,13 @@ th { position: sticky; top: 0; }
 
 /*linear-gradient(180deg, #403, #839);*/
 
-
-
+/* Map */
+#map { 
+    width: 100%;
+    height: 50vh;
+    box-shadow: 0px 10px 10px #999;
+    margin: 0 20px;
+}
 
 
 
@@ -365,66 +302,206 @@ th { position: sticky; top: 0; }
 
 
 
-/*
-.lds-ellipsis {
-    display: none;
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    left: 0;
-    right: 0;
-    top: 40%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.lds-ellipsis div {
-  position: absolute;
-  top: 27px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #222;
-  animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
-.lds-ellipsis div:nth-child(1) {
-  left: 6px;
-  animation: lds-ellipsis1 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(2) {
-  left: 6px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(3) {
-  left: 26px;
-  animation: lds-ellipsis2 0.6s infinite;
-}
-.lds-ellipsis div:nth-child(4) {
-  left: 45px;
-  animation: lds-ellipsis3 0.6s infinite;
-}
-@keyframes lds-ellipsis1 {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes lds-ellipsis3 {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes lds-ellipsis2 {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(19px, 0);
-  }
-}
-*/
 
+
+
+/* Legend of pie chart */
+#genl-legend-pie-chart{
+    text-align: center;
+}
+#genl-legend-pie-chart #containerLegends{
+    text-align: left;
+    display: inline-block;
+}
+#genl-legend-pie-chart .legendRebanada{
+    color: #000;
+    font-size: 1.3em;
+    font-width: 400;
+}
+#genl-legend-pie-chart svg{
+    vertical-align: middle;
+    height: 1.3em;
+    width:  1.3em;
+    margin-right: 5px;
+}
+#genl-legend-pie-chart .legendRebanada circle{
+    r:  0.65em;
+    cx: 0.65em;
+    cy: 0.65em;
+}
+
+
+
+
+
+
+/*  Table  */
+
+#obra-container-body{
+    /*width: 1000px;*/
+    font-size: 15px;
+    padding: 18px 40px;
+    color: #666;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: white !important;
+}
+
+.table thead{
+        font-weight: bold;
+}
+
+.table th{
+    background: white  !important;
+    color: #444 !important;
+    background-color: white !important;
+}
+.table td{
+    border: none !important;
+    padding: 20px;
+}
+.table td.obra{
+    width: 450px;
+}
+.table tr{
+    border-bottom: 1px solid #dedeee;
+}
+thead{
+    border-bottom: 2px solid #dedeee;
+}
+
+
+
+
+
+
+
+
+
+
+#table-obras {
+    padding: 30px 60px;
+    font-size: 15px;
+}
+#obras-table-head {
+    font-weight: bold;
+    color: #444;
+    padding: 20px 20px 5px 20px !important;
+    border-bottom: 2px solid #dedeee !important;
+}
+
+.obranombreee, .obranumerooo, .obramunicipiooo, .obracategoriaaa{
+    font-weight: bold;
+    display: inline;
+}
+
+.col-md-1, .col-md-5, .col-md-3{
+    background: white;
+}
+.valueee{
+    display: inline;
+}
+
+.d-sm-inline {
+    display: inline;
+    margin-right: 4px;
+}
+
+
+/*Celualar 2*/
+#table-obras .tableAll {
+    padding: 20px;
+    color: #666;
+    /* border-bottom: 1px solid #dedeee; */
+    box-shadow: 0 6px 7px #ccc;
+    margin: 0 0 22px 0;
+    border-radius: 5px;
+}
+
+#table-obras {
+    padding: 30px 30px !important; 
+}
+.col-11, .col-1{
+    padding: 0px;
+}
+.col-1{
+    display: inline-block; 
+    top: 0px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.col-11 .value{
+    margin: 10px 0px;
+}
+.fff{
+    line-height: 40px;
+}
+
+.d-sm-inline {
+    margin-right: 0px;
+}
+
+
+
+
+
+.municipioYCategoria{
+    padding: 15px 0 10px 0px;
+}
+
+
+
+
+/* obra detail */
+
+#obra-container-body .container{
+    font-size: 15px !important;
+}
+#obra-container-body .valueField{
+    font-size: 14px !important;
+    display: block;
+    font-weight: bold;
+
+}
+#obra-container-body .titleField{
+    font-size: 15px !important;
+    margin-bottom: 5px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.rowi{
+    margin: 20px 15px;
+}
+.rowi i{
+    margin-right: 10px;
+}
+
+.icontitle{
+    padding: 18px;
+    font-size: 20px;
+    color: white;
+    background: white;
+    border-radius: 60px;
+    box-shadow: 0 5px 5px #777;
+    color: #555;
+    margin: 0 auto;
+    /* left: 500px; *
+    margin-left: 440px;*/
+    margin-left: calc(50% - 20px);
+}
+hr{
+    margin-top: -25px;
+    margin-bottom: 4rem;
+}
+
+.container-images-obra{
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+    /* background: linear-gradient(0deg, #ccc, #fff); */
+    padding: 20px 0px;
+    /* border-radius: 10px; */
+    box-shadow: 0 5px 15px #aaa;
+    clip-path: inset(0px 0px -5px 0px);
+}/*margin: 30px; text-align: center; width: 100%; /* background: linear-gradient(0deg, #ccc, #fff); * padding: 20px 0px; border-radius: 10px; box-shadow: 0 5px 5px #aaa;*/
