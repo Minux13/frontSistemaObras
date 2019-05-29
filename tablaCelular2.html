@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <link rel="icon" href="static/images/favi.png" type="image/gif" sizes="16x9">
+        
+        <!--Loading JQuery UI css-->
+        <link href="./static/css/jquery-ui.css" rel="stylesheet" type="text/css">
+        
+        <!--  -->
+        <link href="./static/css/main.css" rel="stylesheet" type="text/css">
+        <!-- Bootstrap CSS CDN -->
+        <link href="./static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        
+        <!-- Our Custom CSS -->
+        <link href="./static/css/style4.css" rel="stylesheet" type="text/css">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        
+        <!-- Fonts Google -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
+        <!-- CSS of Sistema de Obras -->
+        <link href="./static/css/obras.css" rel="stylesheet" type="text/css">
+ 
+        <!-- CSS for Lato family font -->
+        <link href="static/css/cssLaton.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+
+        <title>Sistema de Obras Públicas del Estado de Nuevo</title>
+    
+    </head>
+    <body class="  pace-done">
+        <div class="pace  pace-inactive">
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">  
+                <div class="pace-progress-inner">
+                </div>
+            </div>
+            <div class="pace-activity">
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar" style="min-height: 100%;">
+                <div class="sidebar-header">
+                    <div class="sjo-logo-big">
+                        <img width="244" height="119" class="img-fluid" src="./static/images/logo.png">
+                    </div>
+                    <div class="sjo-logo-small">
+                        <img width="244" height="119" class="img-fluid" src="./static/images/escudo.png">
+                    </div>
+                </div>
+                <ul class="list-unstyled components">                
+                    <li class="menu-element">
+                        <a href="#" data-toggle="collapse">
+                            <i class="fa fa-cogs fa-fw"></i>
+                            <span class="menu-title">Administración</span>
+                        </a>
+                    </li>
+                    <li class="menu-element">
+                        <a id="portfolio" href="#">
+                            <i class="fa fa-briefcase"></i>
+                            <span class="menu-title">Portafolio</span>
+                        </a>                       
+                    </li>
+                    <li class="menu-element"> 
+                        <a href="#">
+                            <i class="fa fa-sitemap fa-fw"> </i>
+                            <span class="menu-title">Definición de Proyecto</span>
+                        </a>
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-tasks fa-fw"> </i>
+                            <span class="menu-title">Gestión de Proyecto</span>
+                        </a>                          
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-table fa-fw"> </i>
+                            <span class="menu-title">Reportes</span>
+                        </a>                 
+                    </li>
+                    <li class="menu-element">
+                        <a href="#">
+                            <i class="fa fa-tachometer-alt fa-fw"> </i>
+                            <span class="menu-title">Tablero</span>
+                        </a>
+                    </li>                   
+                    
+                </ul>
+            </nav>
+
+
+
+            <!-- Page Content Holder -->
+            <div id="content" class="container-fluid">
+
+            <!-- Nav Bar -->
+                <nav class="navbar navbar-default navbar-static-top" >
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button class="btn btn-info navbar-btn" id="sidebarCollapse" type="button">
+                                <i class="fa fa-bars"></i>
+                                <span class="sr-only">Toggle navigation</span>
+                            </button>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-circle" style="font-size: 20px; vertical-align: -1px;"></i>
+                                Usuario
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-sw" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Mi Perfil</a>               
+                                <!--
+                                <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Calendario</a>
+                                <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Buzón</a>     
+                                -->
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i></i>Salir</a>
+                            </div>
+                        </div>                        
+                    </div>
+                </nav>
+
+
+                <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                <div class="page-title-breadcrumb" id="title-breadcrumb-option-demo">
+                    <ol class="breadcrumb page-breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            &nbsp;
+                            <a href="#">Administración</a>
+                            &nbsp;&nbsp;
+                            <i class="fa fa-angle-right"></i>
+                            &nbsp;&nbsp;
+                            <a href="#" style="color:#505;">Infraestructura</a>
+                        </li>                         
+                    </ol>
+                    <div class="clearfix">
+                    </div>
+                </div>
+                <!--END TITLE & BREADCRUMB PAGE-->
+                
+
+                <!--BEGIN CONTENT-->
+                <div class="container-fluid">
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-12">
+                             <div class="portlet box">
+                                <div class="portlet-header">
+                                    <div class="caption" id="nameDepartment">Infraestructura</div>
+                                    <div class="tools">
+                                        <!--
+                                        <i class="fa fa-chevron-up"></i>
+                                        <i data-toggle="modal" data-target="#modal-config" class="fa fa-cog"></i>
+                                        <i class="fa fa-refresh"></i>
+                                        <i class="fa fa-times"></i>
+                                        -->
+                                    </div>
+                                </div>
+
+                                <div class="portlet-body" id="table-obras">
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                            
+                </div>
+                <!--END CONTENT-->
+                   
+                                   
+                   
+                <div id="footer">
+                        <div class="copyright">
+                            <a href="#">Gobierno del Estado de Nuevo León</a>
+                        </div>
+                </div>
+                
+                <div class="lds-roller"  id="waintingAnimation" >
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                    <div> </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Jquery -->
+        <script src="./static/js/jquery-3.3.1.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="./static/js/bootstrap.min.js"></script>
+        <!-- Jquery UI -->
+        <script src="./static/js/jquery-ui.js"></script>
+        <!--  -->
+        <script src="./static/js/jsonpath-0.8.0.js"></script>
+        <!-- Highcharts -->
+        <script src="./static/js/highcharts.js"></script>
+        <!-- Highcharts 3D charts -->
+        <script src="./static/js/highcharts-3d.js"></script>
+        <!-- Module of Highcharts -->
+        <script src="./static/js/exporting.js"></script>
+        
+        <!-- Custom JS for Sistema de Obras -->
+        <script src="./static/js/obras.js"></script>
+        
+        <script>
+            $(document).ready(function () { listProjects.createList() });
+        </script>
+
+    </body>
+</html>
