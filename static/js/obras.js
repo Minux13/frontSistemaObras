@@ -6,10 +6,6 @@ function setTD(el, className) {
 
 var urlChartJson = './static/mock/15Mayo/plots15M.json';
 var urlTableJson = './static/mock/15Mayo/project_detail15M.json';
-function changeDate() {
-    urlChartJson = './static/mock/plots.json';
-    urlTableJson = './static/mock/project_detail.json';
-}
 
 
 
@@ -18,7 +14,6 @@ function loadDataPieChart(dependency) {
     $.getJSON( urlChartJson , function(data) {
         //try {
    	        //var data = camposGPie[id-1].plots;
-            console.log(urlChartJson);
             var plots;
             var strJSon = "[{}]";        
             plots = jsonPath(data, "$.[?(@.id=='"+dependency+"')].plots[*]");
@@ -96,7 +91,7 @@ function loadDataPieChart(dependency) {
    	    	            point: {
    	    	                events: {
    	    	                    click: function () {
-                                    window.open("/paginadoSistemaObras/tablaCelular2.html","_self");   
+                                    window.open("./tablaCelular2.html","_self");   
    	    	                        //loadModalTable(this.x, this.name, this.y);
    	    	                    },
                                 legendItemClick: function(){
@@ -164,83 +159,74 @@ function loadDataPieChart(dependency) {
 }
 
 
-function loadModalTable(idStatus, name, value) {
-    $("#myModalTable tr>td").remove();
 
-    var dependency= $('#dependency option:selected').val();
+var listProjects = {
     
-    //Wainting animation
-    document.getElementById('waintingAnimation').style.display = "inline-block";
+    createRow: function(numProject, nameProject, cityProject, categoriaProject ){
+        var stringTag = `
+         <div class="row tableAll" onclick="listProjects.goToDetail()" >
+             <div class="col-1 elemm1 ">
+                 <div class="obranumerooo" ></div>
+                 <div class="valueee">
+                    ` + numProject + `
+                 </div>
+             </div>
+             <div class="col-11">
+                 <div class="valueee nameObraTable">
+                    ` + nameProject + `
+                 </div>
+                 <div class="row  municipioYCategoria" >
+                     <div class="col-md-6">
+                         <div class="obramunicipiooo" ><i class="fas fa-map"></i> </div>
+                         <div class="valueee ">
+                            ` + cityProject + `
+                         </div>
+                     </div>
+                     <div class="col-md-6">
+                         <div class="obracategoriaaa" ><i class="fas fa-industry"></i> </div>
+                         <div class="valueee ">
+                            ` + categoriaProject + `
+                         </div>
+                     </div>
+                  </div>
+             </div>
+         </div>
+         `;
+         return stringTag;
+    },
+    createList: function (){
+        var stringList = '';
+        stringList += this.createRow( 1, 'Remozamiento de Imagen Urbana y Restauración de Fachadas Del Centro Histórico de Bustamante, Nuevo León', 
+                            'BUSTAMANTE', 
+                            'REMODELACIÓN' );
+        stringList += this.createRow( 2, 'REHABILITACION EN EL SISTEMA DE SEMAFORIZACION EN DIVERSAS CALLES DE LA CABECERA MUNICIPAL DE CADEREYTA JIMENEZ,N.L.', 
+                            'CADEREYTA', 
+                            'MANTENIMIENTO');
+        stringList += this.createRow( 3, 'MEJORA DE UNIDAD DEPORTIVA ALFONSO MARTINEZ DOMINGUEZ EN CADEREYTA, N.L.', 
+                            'CADEREYTA', 
+                            'MANTENIMIENTO');
+        stringList += this.createRow( 4, 'REHABILITACION DE UNIDAD DEPORTIVA RAUL GONZALEZ EN EL MUNICIPIO DE CHINA,N.L.', 'CHINA', 'MANTENIMIENTO');
+        stringList += this.createRow( 5, 'RECONSTRUCCION Y MEJORAS EN CAPILLAS VELATORIAS, CHINA, N.L.',
+                            'CHINA',
+                            'RECONSTRUCCIÓN');
+        stringList += this.createRow( 6, 'MEJORAS EN LA RED DE ALUMBRADO PÚBLICO EN LA COLONIA ALIANZA REAL, ESCOBEDO, N.L.',
+                            'ESCOBEDO', 
+                            'MANTENIMIENTO' );
+        stringList += this.createRow( 7, 'CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE CONSTITUCION ESQUINA CON AVE ART 27 S/N COL. PRIVADAS DE CAMINO REAL II, ESCOBEDO , N.L.',
+                            'ESCOBEDO', 
+                            'CONSTRUCCIÓN' );
+        stringList += this.createRow( 8, 'PAVIMENTACIÓN DE LAS CALLES GOMEZ PALACIOS, DELICIAS, AGUASCALIENTES, ACUÑA PTE, ACUÑA OTE, CAMPECHE, SAN SALVADOR, SALVATIERRA, TEQUILA, Y ATOYAC EN LA COLONIA ALIANZA REAL, ESCOBEDO, N.L.', 
+                            'ESCOBEDO', 
+                            'PAVIMENTACIÓN' );
 
-    $.getJSON( urlTableJson , function(data) {        
+        document.getElementById('table-obras').innerHTML = stringList;
 
+    },
 
-        var rows;
-        var strRows=""; 
-    
-        if(dependency == '14'){
-
-            rows = jsonPath(data, "$.[?( @.id_estado_obra=='"+idStatus+"')]");
-        }else{
-            rows = jsonPath(data, "$.[?(@.dependency=='"+dependency+"' && @.id_estado_obra=='"+idStatus+"')]");
-        }
-        
-        for (var i=0;i<rows.length;i++) {
-            strRows = "";
-            strRows += '<tr onclick="showModalInfoObra(this);">';
-            strRows += setTD(i+1, 'number');
-            //strRows += rows[i].project+"\n";                        
-            strRows += setTD(rows[i].municipio, 'country');
-            strRows += setTD(rows[i].categoria, 'categoria');
-            strRows += setTD(rows[i].obra, 'obra');
-            strRows += setTD(rows[i].empresa, 'empresa');
-            strRows += setTD(rows[i].numero_contrato, 'numero_contrato');
-            strRows += setTD(rows[i].monto_contrato, 'monto_contrato');
-            strRows += setTD(rows[i].inicio_obra_segun_contrato, 'inicio_obra_segun_contrato');
-            strRows += setTD(rows[i].termino_obra_segun_contrato, 'termino_obra_segun_contrato');
-            strRows += setTD(rows[i].fecha_pago_anticipo, 'fecha_pago_anticipo');
-            strRows += setTD(rows[i].monto_anticipo, 'monto_anticipo');
-            strRows += setTD(rows[i].convenio_ampliacion_economico, 'convenio_ampliacion_economico');
-            strRows += setTD(rows[i].monto_contrato_final, 'monto_contrato_final');
-            strRows += setTD(rows[i].total_pagado, 'total_pagado');
-            
-            //If exist
-            var apa = rows[i].anticipo_pendiente_amortizar ? rows[i].anticipo_pendiente_amortizar : "";
-            strRows += setTD( apa , 'anticipo_pendiente_amortizar');  
-            
-            strRows += setTD(rows[i].avance_financiero, 'avance_financiero');
-            strRows += setTD(rows[i].avance_fisico_verificado_por_la_contraloria, 'avance_fisico_verificado_por_la_contraloria');
-            strRows += setTD(rows[i].entregada_al_beneficiario, 'entregada_al_beneficiario');
-            strRows += setTD(rows[i].fecha_de_verificacion_contraloria, 'fecha_de_verificacion_contraloria');
-            strRows += setTD(rows[i].estatus_verificado_por_la_contraloria, 'estatus_verificado_por_la_contraloria');
-            
-            //Registro fotografico
-            var regFoto = rows[i].registro_fotografico ? rows[i].registro_fotografico : [] ; //If exist, get its array 
-            var regFotoString = '';  //String of elements <img><img>
-            if( regFoto.length > 0){
-                 for( var fotoUrl in regFoto ){
-                     regFotoString += '<img src="'+ regFoto[fotoUrl] +'" width=265 height=191 >';
-                 }
-            }
-            strRows += setTD( regFotoString , 'registro_fotografico');   
-            strRows += "</tr>\n";
-            $("#myModalTable tbody").append(strRows);
-        }
-        
-        $('#myModalTable').modal({ show: true });
-    }).done(function() {
-        document.getElementById('waintingAnimation').style.display = "none";
-    }).fail(function( jqxhr, textStatus, error ) {
-    var err = textStatus + " // " + error;
-    console.log( "Request Failed: " + err );
-    console.log(jqxhr);
-  })
-  .always(function() {
-    console.log( "complete" );
-  });
-
+    goToDetail : function (){
+        window.open("./info2.html","_self");   
+    }
 }
-
 
 
 
@@ -259,26 +245,6 @@ $(document).ready(function () {
 
 });
 
-
-function tabl(){
-    var t = $('.table')[0]
-    var c = $('.portlet-body')[0]
-    
-    g = document.createElement('div');
-    g.setAttribute("id", "obra-container-body");
-
-    
-    //#obra-container-body
-    $(g).append(t)
-    c.replaceWith(g)
-    console.log(g);
-    console.log($(g));
-}
-
-
-function openDetalleObra(){
-    window.open("/paginadoSistemaObras/info.html","_self");   
-}
 
 
 function showModalImageZoom(thisTag){
