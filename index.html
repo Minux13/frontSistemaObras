@@ -256,6 +256,28 @@
         
         <!-- Custom JS for Sistema de Obras -->
         <script src="./static/js/obras.js"></script>
+
+        <script> 
         
+            $(document).ready(function () {
+            
+                //Button toggle for sidebar
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            
+                //Select the dependency 
+                $('#dependency').on('change', function() {
+               	    var id = this.value;
+                    loadDataPieChart( id-1 );
+              	});
+
+                if(document.getElementById('dependency').value != 0){
+                    var idP = document.getElementById('dependency').value;
+                    loadDataPieChart( idP-1 );
+                }
+            });
+
+        </script> 
     </body>
 </html>
