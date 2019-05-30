@@ -1,0 +1,37 @@
+[
+
+  {
+    "dependency": 13,
+    "id_obra" : "dep13e1",
+    "id_estado_obra": 1,
+    "num": 1,
+    "municipio": "MONTERREY",
+    "categoria": "CONSTRUCCIÓN",
+    "obra": "CONSTRUCCIÓN DE CLÍNICA MONTERREY UBICADA EN  PINO SUAREZ # 601 SUR COL. CENTRO MONTERREY",
+    "empresa": "CONSTRUCTORA Y ARRENDADORA SAN SEBASTIAN, SA DE CV",
+    "numero_contrato": "17-06-001",
+    "monto_contrato": "$81,845,711.00",
+    "inicio_obra_segun_contrato": "21-jun-17",
+    "termino_obra_segun_contrato": "31-oct-19",
+    "fecha_pago_anticipo": "07-jun-17",
+    "monto_anticipo": "$16,369,142.20",
+    "fecha_convenio_ampliacion_obra": "19-sep-18",
+    "convenio_ampliacion_economico": "$57,863,572.97",
+    "monto_contrato_final": "$139,709,283.97",
+    "total_pagado": "$43,128,828.28",
+    "anticipo_pendiente_amortizar": "$2,957,322.17",
+    "avance_financiero": "31%",
+    "avance_fisico_verificado_por_la_contraloria": "50%",
+    "entregada_al_beneficiario": "08-may-19",
+    "fecha_de_verificacion_contraloria": "No entregada",
+    "estatus_verificado_por_la_contraloria": "SE TERMINA FACHADA POR J,I,RAMON, SE INICIAN RELLENOS CON MAT. DE BANCO, SE COLOCAN VIGAS CARGADORAS P/LOSA DE ENTREPISOS, SE TERMINA CASQUILLOS  DE COLUMNAS, SE DECIMBRO LOSA DE 2o. PISO AREA DE ELEVADORES",
+    "registro_fotografico": ["static/images/dependencies15Mayo/dep13/3Imagen.jpg"],
+    "justificacion_convenio": "",
+    "": "",
+    "__1": "",
+    "__2": "",
+    "__3": "",
+    "__4": ""
+  }
+
+]
