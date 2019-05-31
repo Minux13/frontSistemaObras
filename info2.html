@@ -146,7 +146,7 @@
                             &nbsp;&nbsp;
                             <i class="fa fa-angle-right"></i>
                             &nbsp;&nbsp;
-                            <a href="#" style="color:#505;">Infraestructura</a>
+                            <a href="#" style="color:#505;" id="titleDepartment" ></a>
                         </li>                         
                     </ol>
                     <div class="clearfix">
@@ -163,9 +163,8 @@
                         <div class="col-lg-12">
                              <div class="portlet box">
                                 <div class="portlet-header">
-                                    <div class="caption" style="padding: 10px;">
+                                    <div class="caption" style="padding: 10px;" id="nameDepartment">
                                     
-CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE CONSTITUCION ESQUINA CON AVE ART 27 S/N COL. PRIVADAS DE CAMINO REAL II, ESCOBEDO , N.L.
                                     
                                     </div>
                                     <div class="tools">
@@ -371,8 +370,8 @@ CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE 
                                                         <div class="col-sm-12">
                                     
                                                             <div class="progress" style="height: 2em; margin-top: 10px;">
-                                                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%; background:linear-gradient(0deg, #202, #808);font-size: 2em; font-weight: bold;">
-                                                                    100%
+                                                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%; background:linear-gradient(0deg, #202, #808);font-size: 2em; font-weight: bold;"  id="avance_financieroField" >
+                                                                    
                                                                 </div>
                                                             </div>
                                     
@@ -385,8 +384,8 @@ CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE 
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <div class="progress" style="height: 2em; margin-top: 10px;">
-                                                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:80%; background:linear-gradient(0deg, #202, #808);font-size: 2em; font-weight: bold;">
-                                                                        80%
+                                                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:80%; background:linear-gradient(0deg, #202, #808);font-size: 2em; font-weight: bold;" id="avance_fisico_verificado_contraloriaField">
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -433,12 +432,10 @@ CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE 
                                     
                                             <br>
                                             <div class="row">
-                                                 <div class="container-images-obra" >
+                                                 <div class="container-images-obra" id="registro_fotograficoField">
                                                     <!--
                                                     <i class="fas fa-arrow-circle-left" style="font-size: 29px; color: #bababa; vertical-align: sub;" ></i>
                                                     -->
-                                                    <img src="static/images/imagen2.jpeg" style="margin: 4px 6px;border-radius: 8px;" onclick="showModalImageZoom(this)" width="200" height="144">
-                                                    <img src="static/images/imagen5.jpeg" style="margin: 4px 6px;border-radius: 8px;" onclick="showModalImageZoom(this)" width="200" height="144">
                                                     <!--
                                                     <i class="fas fa-arrow-circle-right" style="font-size: 29px; color: #bababa; vertical-align: sub;" ></i>
                                                     -->
@@ -560,42 +557,56 @@ CONSTRUCCION DE LA UNIDAD DE ESPECIALIDADES MEDICAS EN CIRUGIA AMBULATORIA, AVE 
 
 
 
-<script>
-$(document).ready(function () {
-    var map = L.map('map').setView([25.6761633,-100.2952764], 13);
-    
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    
-    L.marker([25.6761633,-100.2952764]).addTo(map)
-       // .bindPopup('')
-       // .openPopup();
-    
-    setTimeout(function(){map._onResize()}, 1000);
+        <script>
+            $(document).ready(function () {
+
+                //Button toggle for sidebar
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
 
 
-    $("#municipioField").append( "Autopista Monterrey-Cadereyta" )
-    $("#categoriaField").append( "Pavimentación" )
-    $("#empresaField").append("EDIFICACIONES Y PROYECTOS AGGAA, S.A. DE C.V.");
-    $("#monto_contratoField").append("$36,198,945.11");
-    $("#termino_obra_segun_contratoField").append("18-jul-18");
-    $("#monto_anticipoField").append("$10,859,683.53");
-    $("#monto_contrato_finalField").append("$35,777,755.41");
-    $("#anticipo_pendiente_amortizarField").append("$0.00");
-    $("#numero_contratoField").append("REANL/AMC/DI-17/09-CP");
-    $("#inicio_obra_segun_contratoField").append("19-feb-18");
-    $("#fecha_pago_anticipoField").append("08-feb-18");
-    $("#convenio_ampliacion_economicoField").append("-$421,189.70");
-    $("#total_pagadoField").append("$35,777,755.41");
-    $("#fecha_de_verificacion_contraloriaField").append("10-dic-18");
-    $("#entregada_al_beneficiarioField").append("Entregada");
-    $("#estatus_verificado_por_la_contraloriaField").append("Obra Terminada");
-    ///Faltan avance financiero, avance fotos y ubicacion
+                var map = L.map('map').setView([25.6761633,-100.2952764], 13);
+                
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                L.marker([25.6761633,-100.2952764]).addTo(map)
+                   // .bindPopup('')
+                   // .openPopup();
+                
+                setTimeout(function(){map._onResize()}, 1000);
 
-
-});
-</script>
+                
+                var valuesHash = window.location.hash;
+                var strValues = valuesHash.replace("#","");
+                var values = strValues.split(',');
+                detailProject.createDetail( values[0], values[1] );
+            
+                /*
+                $("#municipioField").append( "Autopista Monterrey-Cadereyta" )
+                $("#categoriaField").append( "Pavimentación" )
+                $("#empresaField").append("EDIFICACIONES Y PROYECTOS AGGAA, S.A. DE C.V.");
+                $("#monto_contratoField").append("$36,198,945.11");
+                $("#termino_obra_segun_contratoField").append("18-jul-18");
+                $("#monto_anticipoField").append("$10,859,683.53");
+                $("#monto_contrato_finalField").append("$35,777,755.41");
+                $("#anticipo_pendiente_amortizarField").append("$0.00");
+                $("#numero_contratoField").append("REANL/AMC/DI-17/09-CP");
+                $("#inicio_obra_segun_contratoField").append("19-feb-18");
+                $("#fecha_pago_anticipoField").append("08-feb-18");
+                $("#convenio_ampliacion_economicoField").append("-$421,189.70");
+                $("#total_pagadoField").append("$35,777,755.41");
+                $("#fecha_de_verificacion_contraloriaField").append("10-dic-18");
+                $("#entregada_al_beneficiarioField").append("Entregada");
+                $("#estatus_verificado_por_la_contraloriaField").append("Obra Terminada");
+                ///Faltan avance financiero, avance fotos y ubicacion
+                */
+            
+            
+            });
+        </script>
         
     </body>
 </html>
