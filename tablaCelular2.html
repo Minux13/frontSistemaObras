@@ -179,7 +179,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                            
+                    </div>
+
+                    <div class="" id="buttons_pagination">
+                        
+                    </div>
+
                 </div>
                 <!--END CONTENT-->
                    
@@ -237,7 +242,7 @@
                 var strValues = valuesHash.replace("#","");
                 var values = strValues.split(',');
                 console.log(strValues);
-                listProjects.createList( values[0], values[1] );
+                listProjects.initList( values[0], values[1] );
             });
 
         </script>
