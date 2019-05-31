@@ -210,7 +210,7 @@ body{
 /* Waiting animation */
 .lds-roller {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 64px;
     height: 64px;
     left: 0;
@@ -416,6 +416,10 @@ thead{
     box-shadow: 0 6px 7px #ccc;
     margin: 0 0 22px 0;
     border-radius: 5px;
+    cursor: pointer;
+}
+.tableAll:hover{
+    box-shadow: 0 8px 10px #aaa !important;
 }
 
 #table-obras {
@@ -476,6 +480,29 @@ thead{
 .rowi i{
     margin-right: 10px;
 }
+#buttons_pagination{
+    text-align: center;
+}
+.button_pag{
+    margin: 0px -1px;
+    padding: 5px 12px;
+    font-size: 1.3em;
+    border: 1px solid #bbb;
+    background: white;
+    /* box-shadow: 0 5px 5px #777; */
+    /* border-radius: 5px; */
+    color: #555;
+}
+.button_pag:hover, .button_pag[active]{
+    background: linear-gradient(0deg, #303, #606);
+    border: solid 1px #505;
+    color: #fff;
+}
+
+
+
+
+
 
 .icontitle{
     padding: 18px;
@@ -505,3 +532,28 @@ hr{
     box-shadow: 0 5px 15px #aaa;
     clip-path: inset(0px 0px -5px 0px);
 }/*margin: 30px; text-align: center; width: 100%; /* background: linear-gradient(0deg, #ccc, #fff); * padding: 20px 0px; border-radius: 10px; box-shadow: 0 5px 5px #aaa;*/
+
+.imagesInfoDetail{
+    margin: 4px 6px;
+    border-radius: 8px;
+    width: 200px;
+    height: 144px;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .rowi{
+        margin: 20px 0px;
+    }
+    #obra-container-body{
+        padding: 18px 20px;
+    }
+}
