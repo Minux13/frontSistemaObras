@@ -63,37 +63,37 @@
                 </div>
                 <ul class="list-unstyled components">                
                     <li class="menu-element">
-                        <a href="#" data-toggle="collapse">
+                        <a  data-toggle="collapse">
                             <i class="fa fa-cogs fa-fw"></i>
                             <span class="menu-title">Administración</span>
                         </a>
                     </li>
                     <li class="menu-element">
-                        <a id="portfolio" href="#">
+                        <a id="portfolio" >
                             <i class="fa fa-briefcase"></i>
                             <span class="menu-title">Portafolio</span>
                         </a>                       
                     </li>
                     <li class="menu-element"> 
-                        <a href="#">
+                        <a >
                             <i class="fa fa-sitemap fa-fw"> </i>
                             <span class="menu-title">Definición de Proyecto</span>
                         </a>
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-tasks fa-fw"> </i>
                             <span class="menu-title">Gestión de Proyecto</span>
                         </a>                          
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-table fa-fw"> </i>
                             <span class="menu-title">Reportes</span>
                         </a>                 
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-tachometer-alt fa-fw"> </i>
                             <span class="menu-title">Tablero</span>
                         </a>
@@ -116,21 +116,21 @@
                                 <span class="sr-only">Toggle navigation</span>
                             </button>
                         </div>
+                        <!--
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle" style="font-size: 20px; vertical-align: -1px;"></i>
                                 Usuario
                             </button>
                             <div class="dropdown-menu dropdown-menu-sw" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Mi Perfil</a>               
-                                <!--
+                                <a class="dropdown-item" ><i class="fa fa-user"></i>Mi Perfil</a>               
                                 <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Calendario</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Buzón</a>     
-                                -->
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i></i>Salir</a>
+                                <a class="dropdown-item" ><i class="fas fa-sign-out-alt"></i></i>Salir</a>
                             </div>
-                        </div>                        
+                        </div> 
+                        -->                       
                     </div>
                 </nav>
 
@@ -141,11 +141,12 @@
                         <li>
                             <i class="fa fa-home"></i>
                             &nbsp;
-                            <a href="#">Administración</a>
+                            <a  id="titleFirstLink" >Administración</a>
                             &nbsp;&nbsp;
                             <i class="fa fa-angle-right"></i>
                             &nbsp;&nbsp;
-                            <a href="#" style="color:#505;" id="titleDepartment" ></a>
+                            <a  id="titleDepartment" ></a>
+
                         </li>                         
                     </ol>
                     <div class="clearfix">
@@ -160,7 +161,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                              <div class="portlet box">
-                                <div class="portlet-header">
+                                <div class="portlet-header" id="headerListProjects" >
                                     <div class="caption" id="nameDepartment"></div>
                                     <div class="tools">
                                         <!--
@@ -170,6 +171,7 @@
                                         <i class="fa fa-times"></i>
                                         -->
                                     </div>
+                                    <div id="statusProjectName"> </div>
                                 </div>
 
                                 <div class="portlet-body" id="table-obras">
@@ -192,7 +194,7 @@
                    
                 <div id="footer">
                         <div class="copyright">
-                            <a href="#">Gobierno del Estado de Nuevo León</a>
+                            <a >Gobierno del Estado de Nuevo León</a>
                         </div>
                 </div>
                 
@@ -241,8 +243,9 @@
                 var valuesHash = window.location.hash;
                 var strValues = valuesHash.replace("#","");
                 var values = strValues.split(',');
-                console.log(strValues);
                 listProjects.initList( values[0], values[1] );
+
+                
             });
 
         </script>
