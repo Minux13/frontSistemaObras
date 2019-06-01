@@ -114,6 +114,33 @@ body{
 }
 
 
+/* Links titles */
+#titleFirstLink{
+    cursor: pointer;
+}
+#titleDepartment{
+    cursor: pointer;
+    color:#505;
+    font-size: 1.5em;
+}
+
+#titleEspecificacionObra{
+    font-size: 1.5em;
+    cursor: pointer;
+    color:#505;
+}
+
+
+#statusProjectName{
+    font-size: 1.4em;
+    display: inline;
+    float: right;
+}
+
+
+
+
+
 /*** Select ***/
 #dependency{
     padding: 5px 10px;
