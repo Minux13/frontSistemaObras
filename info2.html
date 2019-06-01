@@ -63,37 +63,37 @@
                 </div>
                 <ul class="list-unstyled components">                
                     <li class="menu-element">
-                        <a href="#" data-toggle="collapse">
+                        <a  data-toggle="collapse">
                             <i class="fa fa-cogs fa-fw"></i>
                             <span class="menu-title">Administración</span>
                         </a>
                     </li>
                     <li class="menu-element">
-                        <a id="portfolio" href="#">
+                        <a id="portfolio" >
                             <i class="fa fa-briefcase"></i>
                             <span class="menu-title">Portafolio</span>
                         </a>                       
                     </li>
                     <li class="menu-element"> 
-                        <a href="#">
+                        <a >
                             <i class="fa fa-sitemap fa-fw"> </i>
                             <span class="menu-title">Definición de Proyecto</span>
                         </a>
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-tasks fa-fw"> </i>
                             <span class="menu-title">Gestión de Proyecto</span>
                         </a>                          
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-table fa-fw"> </i>
                             <span class="menu-title">Reportes</span>
                         </a>                 
                     </li>
                     <li class="menu-element">
-                        <a href="#">
+                        <a >
                             <i class="fa fa-tachometer-alt fa-fw"> </i>
                             <span class="menu-title">Tablero</span>
                         </a>
@@ -116,21 +116,23 @@
                                 <span class="sr-only">Toggle navigation</span>
                             </button>
                         </div>
+                        <!--
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-user-circle" style="font-size: 20px; vertical-align: -1px;"></i>
                                 Usuario
                             </button>
                             <div class="dropdown-menu dropdown-menu-sw" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#"><i class="fa fa-user"></i>Mi Perfil</a>               
-                                <!--
+                                <a class="dropdown-item" ><i class="fa fa-user"></i>Mi Perfil</a>               
+                                
                                 <a class="dropdown-item" href="#"><i class="fa fa-calendar"></i>Calendario</a>
                                 <a class="dropdown-item" href="#"><i class="fa fa-envelope"></i>Buzón</a>     
-                                -->
+                                
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i></i>Salir</a>
+                                <a class="dropdown-item" ><i class="fas fa-sign-out-alt"></i></i>Salir</a>
                             </div>
-                        </div>                        
+                        </div>   
+                        -->                     
                     </div>
                 </nav>
 
@@ -142,11 +144,15 @@
                         <li>
                             <i class="fa fa-home"></i>
                             &nbsp;
-                            <a href="#">Administración</a>
+                            <a  id="titleFirstLink">Administración</a>
                             &nbsp;&nbsp;
                             <i class="fa fa-angle-right"></i>
                             &nbsp;&nbsp;
-                            <a href="#" style="color:#505;" id="titleDepartment" ></a>
+                            <a  id="titleDepartment" ></a>
+                            &nbsp;&nbsp;
+                            <i class="fa fa-angle-right"></i>
+                            &nbsp;&nbsp;
+                            <a id="titleEspecificacionObra" >Especificación de la Obra</a>
                         </li>                         
                     </ol>
                     <div class="clearfix">
@@ -238,6 +244,10 @@
                                                 
                                     
                                             <div class="row">
+
+
+
+
                                                 <div class="col-md-6 ">
                                                     
                                                     <div class="row rowi">
@@ -248,58 +258,8 @@
                                                             <span class="valueField" id="empresaField"></span>
                                                         </div>
                                                     </div>
-                                    
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Monto de contrato:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="monto_contratoField"></span>
-                                                        </div>
-                                                    </div>
-                                    
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Termino de obra según contrato:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="termino_obra_segun_contratoField"></span>
-                                                        </div>
-                                                    </div>
-                                    
-                                                    
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Monto anticipo:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="monto_anticipoField"></span>
-                                                        </div>
-                                                    </div>
-                                    
-                                                    
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Monto contrato final:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="monto_contrato_finalField"></span>
-                                                        </div>
-                                                    </div>
-                                    
-                                                    
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Anticipo pendiente amotizar:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="anticipo_pendiente_amortizarField"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                    
-                                    
-                                                <div class="col-md-6 ">
+
+
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
                                                             <span class="titleField">Número de contrato:</span>
@@ -308,7 +268,18 @@
                                                             <span class="valueField" id="numero_contratoField"></span>
                                                         </div>
                                                     </div>
-                                                    
+
+                                    
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Monto contratado:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="monto_contratoField"></span>
+                                                        </div>
+                                                    </div>
+
+
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
                                                             <span class="titleField">Inicio de obra según contrato:</span>
@@ -317,7 +288,18 @@
                                                             <span class="valueField" id="inicio_obra_segun_contratoField"></span>
                                                         </div>
                                                     </div>
-                                    
+
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Termino de obra según contrato:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="termino_obra_segun_contratoField"></span>
+                                                        </div>
+                                                    </div>
+
+
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
                                                             <span class="titleField">Fecha de pago anticipo:</span>
@@ -326,7 +308,32 @@
                                                             <span class="valueField" id="fecha_pago_anticipoField"></span>
                                                         </div>
                                                     </div>
-                                                    
+
+
+                                                </div>
+                                                <div class="col-md-6 ">
+
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Monto:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="monto_anticipoField"></span>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Fecha de convenio de ampliación de la obra:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="fecha_convenio_ampliacion_obraField"></span>
+                                                        </div>
+                                                    </div>
+
+
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
                                                             <span class="titleField">Convenio de apliación económico:</span>
@@ -335,7 +342,18 @@
                                                             <span class="valueField" id="convenio_ampliacion_economicoField"></span>
                                                         </div>
                                                     </div>
-                                                    
+
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Monto contrato final:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="monto_contrato_finalField"></span>
+                                                        </div>
+                                                    </div>
+  
+                                                   
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
                                                             <span class="titleField">Total pagado:</span>
@@ -343,11 +361,23 @@
                                                         <div class="col-sm-12">
                                                             <span class="valueField" id="total_pagadoField"></span>
                                                         </div>
+                                                    </div>                                                   
+
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Anticipo pendiente de amotizar:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="anticipo_pendiente_amortizarField"></span>
+                                                        </div>
                                                     </div>
+
                                                     
                                                 </div>
                                     
-                                    
+                                            
+                                            
                                             </div>
                                             
                                     
@@ -391,20 +421,6 @@
                                                         </div>
                                                     </div>
                                                     
-                                                    <div class="row rowi">
-                                                        <div class="col-sm-12">
-                                                            <span class="titleField">Fecha de verificación contraloría:</span>
-                                                        </div>
-                                                        <div class="col-sm-12">
-                                                            <span class="valueField" id="fecha_de_verificacion_contraloriaField"></span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                                    
-                                    
-                                    
-                                                <div class="col-md-6 ">
                                                     
                                                     <div class="row rowi">
                                                         <div class="col-sm-12">
@@ -412,6 +428,22 @@
                                                         </div>
                                                         <div class="col-sm-12">
                                                             <span class="valueField" id="entregada_al_beneficiarioField"></span>
+                                                        </div>
+                                                    </div>
+                                                   
+
+                                                </div>
+                                    
+                                    
+                                                <div class="col-md-6 ">
+                                                    
+
+                                                    <div class="row rowi">
+                                                        <div class="col-sm-12">
+                                                            <span class="titleField">Fecha de verificación contraloría:</span>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <span class="valueField" id="fecha_de_verificacion_contraloriaField"></span>
                                                         </div>
                                                     </div>
                                                     
@@ -483,7 +515,7 @@
                    
                 <div id="footer">
                         <div class="copyright">
-                            <a href="#">Gobierno del Estado de Nuevo León</a>
+                            <a >Gobierno del Estado de Nuevo León</a>
                         </div>
                 </div>
                 
@@ -582,27 +614,9 @@
                 var valuesHash = window.location.hash;
                 var strValues = valuesHash.replace("#","");
                 var values = strValues.split(',');
-                detailProject.createDetail( values[0], values[1] );
+                detailProject.createDetail( values[0], values[1], values[2] );
             
-                /*
-                $("#municipioField").append( "Autopista Monterrey-Cadereyta" )
-                $("#categoriaField").append( "Pavimentación" )
-                $("#empresaField").append("EDIFICACIONES Y PROYECTOS AGGAA, S.A. DE C.V.");
-                $("#monto_contratoField").append("$36,198,945.11");
-                $("#termino_obra_segun_contratoField").append("18-jul-18");
-                $("#monto_anticipoField").append("$10,859,683.53");
-                $("#monto_contrato_finalField").append("$35,777,755.41");
-                $("#anticipo_pendiente_amortizarField").append("$0.00");
-                $("#numero_contratoField").append("REANL/AMC/DI-17/09-CP");
-                $("#inicio_obra_segun_contratoField").append("19-feb-18");
-                $("#fecha_pago_anticipoField").append("08-feb-18");
-                $("#convenio_ampliacion_economicoField").append("-$421,189.70");
-                $("#total_pagadoField").append("$35,777,755.41");
-                $("#fecha_de_verificacion_contraloriaField").append("10-dic-18");
-                $("#entregada_al_beneficiarioField").append("Entregada");
-                $("#estatus_verificado_por_la_contraloriaField").append("Obra Terminada");
-                ///Faltan avance financiero, avance fotos y ubicacion
-                */
+
             
             
             });
