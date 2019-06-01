@@ -1,7 +1,6 @@
 
 //Archivos estaticos simulados json
 var urlChartJson = './static/mock/15Mayo/plots15M.json';
-var urlTableJson = '';
 
 
 //Forma la grafica pie
@@ -158,14 +157,23 @@ function loadDataPieChart(dependency) {
 }
 
 
+var statusProjectsSettings = [
+    {'color': '#333333', 'background' : 'linear-gradient(0deg, #aa0, #ff0', 'name': 'OBRAS TERMINADAS'},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #040, #090', 'name': 'OBRAS EN TIEMPO'},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #500, #d00', 'name': 'OBRAS CON RETRASO'},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #666, #ddd', 'name': 'OBRAS RESCINDIDAS'},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #636, #c9d', 'name': 'OBRAS NO INICIADAS '},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #950, #f90', 'name': 'OBRA CON AVANCE FINANCIERO MAYOR AL FÍSICO'},
+    {'color': '#ffffff', 'background' : 'linear-gradient(0deg, #79a, #acf', 'name': 'OBRAS DE FUERZA CIVIL, POLICÍA  Y PENALES'},
+]; //linear-gradient(0deg, #aaf, #559);
 
 
 
 var listProjects = {
     
-    createRow: function(numProject, nameProject, cityProject, categoriaProject, dependency, idProject ){
+    createRow: function(numProject, nameProject, cityProject, categoriaProject, dependency, idProject, idStatus ){
         var stringTag = `
-         <div class="row tableAll"  idProject="`+ idProject +`" dependency="`+ dependency +`"  onclick="listProjects.goToDetail(this)" >
+         <div class="row tableAll"  idProject="`+ idProject +`" dependency="`+ dependency +`"  idStatus="`+ idStatus +`" onclick="listProjects.goToDetail(this)" >
              <div class="col-sm-1 col-2 pl-sm-4 pl-0 pr-sm-4 pr-0 elemm1 ">
                  <div class="valueee">
                     ` + numProject + `
@@ -262,7 +270,13 @@ var listProjects = {
 
             //Create array of elemts HTML 
             for (var i=0;i<rows.length;i++) {
-                listProjects.arrayTagsHTML.push( listProjects.createRow( i+1, rows[i].obra, rows[i].municipio, rows[i].categoria, dependency, rows[i].id_obra ));
+                listProjects.arrayTagsHTML.push( listProjects.createRow( i+1, 
+                                                                         rows[i].obra, 
+                                                                         rows[i].municipio, 
+                                                                         rows[i].categoria, 
+                                                                         dependency, 
+                                                                         rows[i].id_obra,
+                                                                         idStatus ));
             }
             
             listProjects.setRowsPagination( 0 );
@@ -271,6 +285,18 @@ var listProjects = {
 
             document.getElementById('titleDepartment').innerHTML = listProjects.namesAsociatesProjects[dependency]
             document.getElementById('nameDepartment').innerHTML = listProjects.namesAsociatesProjects[dependency]
+            
+            document.getElementById('titleFirstLink').setAttribute('href','./');
+
+
+            var styleTitulo = 'color:' + statusProjectsSettings[idStatus].color +'; background:'+ statusProjectsSettings[idStatus].background + ';';
+            document.getElementById('headerListProjects').style.color = statusProjectsSettings[idStatus].color;
+            document.getElementById('headerListProjects').style.background = statusProjectsSettings[idStatus].background;
+            document.getElementById('statusProjectName').innerHTML = statusProjectsSettings[idStatus].name ;
+
+
+            //Set and save this url
+            listProjects.thisHashUrl = dependency + ',' + idStatus;
         
         }).done(function() { ; })
           .fail(function( jqxhr, textStatus, error ) {
@@ -282,11 +308,13 @@ var listProjects = {
             document.getElementById('waintingAnimation').style.display = "none";
         })
     },
+    thisHashUrl : '',
     goToDetail : function ( thisTag ){
 
         var idObra = thisTag.getAttribute("idProject");
         var dependency = thisTag.getAttribute("dependency");
-        var url = "./info2.html#" + dependency + ',' + idObra
+        var idStatus = thisTag.getAttribute("idStatus");
+        var url = "./info2.html#" + dependency + ',' + idStatus + ',' + idObra  ;
         window.open( url ,"_self");   
     }
 }
@@ -295,7 +323,7 @@ var listProjects = {
 
 var detailProject = {
     
-    createDetail: function ( dependency, idProject ){
+    createDetail: function ( dependency, idStatus, idProject ){
         
         document.getElementById('waintingAnimation').style.display = "block";
 
@@ -306,24 +334,45 @@ var detailProject = {
             var fields = jsonPath(data, "$.[?( @.id_obra=='"+ idProject +"')]")[0];
             
 
-            document.getElementById("municipioField").innerHTML = fields.municipio ;
-            document.getElementById("categoriaField").innerHTML = fields.categoria ;
-            document.getElementById("empresaField").innerHTML = fields.empresa ;
-            document.getElementById("monto_contratoField").innerHTML = fields.monto_contrato ;
-            document.getElementById("termino_obra_segun_contratoField").innerHTML = fields.termino_obra_segun_contrato ;
-            document.getElementById("monto_anticipoField").innerHTML = fields.monto_anticipo ;
-            document.getElementById("monto_contrato_finalField").innerHTML = fields.monto_contrato_final ;
-            document.getElementById("anticipo_pendiente_amortizarField").innerHTML = fields.anticipo_pendiente_amortizar ;
-            document.getElementById("numero_contratoField").innerHTML = fields.numero_contrato ;
-            document.getElementById("inicio_obra_segun_contratoField").innerHTML = fields.inicio_obra_segun_contrato ;
-            document.getElementById("fecha_pago_anticipoField").innerHTML = fields.fecha_pago_anticipo ;
-            document.getElementById("convenio_ampliacion_economicoField").innerHTML = fields.convenio_ampliacion_economico ;
-            document.getElementById("total_pagadoField").innerHTML = fields.total_pagado ;
-            document.getElementById("fecha_de_verificacion_contraloriaField").innerHTML = fields.fecha_de_verificacion_contraloria ;
-            document.getElementById("entregada_al_beneficiarioField").innerHTML = fields.entregada_al_beneficiario ;
-            document.getElementById("estatus_verificado_por_la_contraloriaField").innerHTML = fields.estatus_verificado_por_la_contraloria ;
 
-            var percentAF = fields.avance_financiero;
+            var valueMunicipio                              = fields.municipio                              ? fields.municipio                              : '';
+            var valueCategoria                              = fields.categoria                              ? fields.categoria                              : '';
+            var valueEmpresa                                = fields.empresa                                ? fields.empresa                                : '';
+            var valueMonto_contrato                         = fields.monto_contrato                         ? fields.monto_contrato                         : '';
+            var valueTermino_obra_segun_contrato            = fields.termino_obra_segun_contrato            ? fields.termino_obra_segun_contrato            : '';
+            var valueMonto_anticipo                         = fields.monto_anticipo                         ? fields.monto_anticipo                         : '';
+            var valueMonto_contrato_final                   = fields.monto_contrato_final                   ? fields.monto_contrato_final                   : '';
+            var valueAnticipo_pendiente_amortizar           = fields.anticipo_pendiente_amortizar           ? fields.anticipo_pendiente_amortizar           : '';
+            var valueNumero_contrato                        = fields.numero_contrato                        ? fields.numero_contrato                        : '';
+            var valueInicio_obra_segun_contrato             = fields.inicio_obra_segun_contrato             ? fields.inicio_obra_segun_contrato             : '';
+            var valueFecha_pago_anticipo                    = fields.fecha_pago_anticipo                    ? fields.fecha_pago_anticipo                    : '';
+            var valueConvenio_ampliacion_economico          = fields.convenio_ampliacion_economico          ? fields.convenio_ampliacion_economico          : '';
+            var valueFecha_convenio_ampliacion_obra         = fields.fecha_convenio_ampliacion_obra         ? fields.fecha_convenio_ampliacion_obra         : '';
+            var valueTotal_pagado                           = fields.total_pagado                           ? fields.total_pagado                           : '';
+            var valueFecha_de_verificacion_contraloria      = fields.fecha_de_verificacion_contraloria      ? fields.fecha_de_verificacion_contraloria      : '';
+            var valueEntregada_al_beneficiario              = fields.entregada_al_beneficiario              ? fields.entregada_al_beneficiario              : '';
+            var valueEstatus_verificado_por_la_contraloria  = fields.estatus_verificado_por_la_contraloria  ? fields.estatus_verificado_por_la_contraloria  : '';
+
+
+            document.getElementById("municipioField").innerHTML                             = valueMunicipio                            ;
+            document.getElementById("categoriaField").innerHTML                             = valueCategoria                            ;
+            document.getElementById("empresaField").innerHTML                               = valueEmpresa                              ;
+            document.getElementById("monto_contratoField").innerHTML                        = valueMonto_contrato                       ;
+            document.getElementById("termino_obra_segun_contratoField").innerHTML           = valueTermino_obra_segun_contrato          ;
+            document.getElementById("monto_anticipoField").innerHTML                        = valueMonto_anticipo                       ;
+            document.getElementById("monto_contrato_finalField").innerHTML                  = valueMonto_contrato_final                 ;
+            document.getElementById("anticipo_pendiente_amortizarField").innerHTML          = valueAnticipo_pendiente_amortizar         ;
+            document.getElementById("numero_contratoField").innerHTML                       = valueNumero_contrato                      ;
+            document.getElementById("inicio_obra_segun_contratoField").innerHTML            = valueInicio_obra_segun_contrato           ;
+            document.getElementById("fecha_pago_anticipoField").innerHTML                   = valueFecha_pago_anticipo                  ;
+            document.getElementById("convenio_ampliacion_economicoField").innerHTML         = valueConvenio_ampliacion_economico        ;
+            document.getElementById("fecha_convenio_ampliacion_obraField").innerHTML        = valueFecha_convenio_ampliacion_obra       ;
+            document.getElementById("total_pagadoField").innerHTML                          = valueTotal_pagado                         ;
+            document.getElementById("fecha_de_verificacion_contraloriaField").innerHTML     = valueFecha_de_verificacion_contraloria    ;
+            document.getElementById("entregada_al_beneficiarioField").innerHTML             = valueEntregada_al_beneficiario            ;
+            document.getElementById("estatus_verificado_por_la_contraloriaField").innerHTML = valueEstatus_verificado_por_la_contraloria;
+
+            var percentAF = fields.avance_financiero ? fields.avance_financiero : '';
             document.getElementById('avance_financieroField').innerHTML = percentAF;
             var percentAFValue = '0';
             if( percentAF[ percentAF.length - 1 ] == '%' && !isNaN( percentAF.slice(0, -1) ) ){
@@ -331,7 +380,7 @@ var detailProject = {
             }
             $("#avance_financieroField").css('width', percentAFValue );
             
-            var avanceFVC = fields.avance_fisico_verificado_por_la_contraloria;
+            var avanceFVC = fields.avance_fisico_verificado_por_la_contraloria ? fields.avance_fisico_verificado_por_la_contraloria : '';
             document.getElementById('avance_fisico_verificado_contraloriaField').innerHTML = avanceFVC;
             var avanceFVCValue = '0';
             if( avanceFVC[ avanceFVC.length - 1 ] == '%' && !isNaN( avanceFVC.slice(0, -1) ) ){
@@ -339,18 +388,23 @@ var detailProject = {
             }
             $("#avance_fisico_verificado_contraloriaField").css('width', avanceFVCValue );
             
+
             var registroFotografico = fields.registro_fotografico;
             var strRegFoto = '';
             for( var r in registroFotografico ){
                  strRegFoto += '<img src="'+ registroFotografico[r] +'" class="imagesInfoDetail" onclick="showModalImageZoom(this)" >'
             }
-            
             document.getElementById('registro_fotograficoField').innerHTML = strRegFoto;
             
             ///Faltan ubicacion
             
             document.getElementById('titleDepartment').innerHTML = listProjects.namesAsociatesProjects[dependency];
-            document.getElementById('nameDepartment').innerHTML = fields.obra ;
+            document.getElementById('nameDepartment').innerHTML = fields.obra ? fields.obra : '' ;
+
+            
+            document.getElementById('titleDepartment').setAttribute('href','./tablaCelular2.html#' + dependency + ',' + idStatus );
+            document.getElementById('titleFirstLink').setAttribute('href','./');
+
         
         }).done(function() { 
             document.getElementById('waintingAnimation').style.display = "none";
